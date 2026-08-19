@@ -14,19 +14,20 @@ APP_NAME="ConstStack.app"
 DEST="/Applications/$APP_NAME"
 TMP_DIR="/tmp/conststack_install_$$"
 REPO="ArmanKT/ConstStack-releases"
+TS=$(date +%s)
 
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR"
 
 echo "🔍 [1/4] Detecting latest ConstStack release..."
-# 1. Fetch version directly from Cask CDN (Zero Rate-Limits & Instant)
-CASK_VER=$(curl -sSL "https://raw.githubusercontent.com/$REPO/main/Casks/conststack.rb" | grep 'version "' | sed -E 's/.*version "([^"]+)".*/\1/' || true)
+# 1. Fetch version directly from Cask with cache-buster (Zero Rate-Limits & Instant)
+CASK_VER=$(curl -sSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "https://raw.githubusercontent.com/$REPO/main/Casks/conststack.rb?t=$TS" | grep 'version "' | sed -E 's/.*version "([^"]+)".*/\1/' || true)
 
 if [ -n "$CASK_VER" ]; then
     LATEST_TAG="v${CASK_VER#v}"
 else
-    # 2. Fallback to GitHub Releases API
-    LATEST_TAG=$(curl -sSL "https://api.github.com/repos/$REPO/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' || echo "v1.1.1")
+    # 2. Fallback to GitHub Releases API with cache-buster
+    LATEST_TAG=$(curl -sSL -H "Cache-Control: no-cache" "https://api.github.com/repos/$REPO/releases/latest?t=$TS" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' || echo "v1.1.1")
 fi
 
 CLEAN_VER="${LATEST_TAG#v}"
