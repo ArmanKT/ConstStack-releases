@@ -32,7 +32,7 @@ Say goodbye to slow, bloated legacy tools like XAMPP or complex virtual machines
 ## 🚀 Quick Installation
 
 ### ⚡ Method 1: 1-Line Terminal Auto-Install (Recommended)
-Automatically downloads the signed DMG, installs directly into `/Applications`, removes Apple quarantine, and bypasses Gatekeeper restrictions automatically:
+Automatically downloads the signed DMG from GitHub Releases, installs directly into `/Applications`, removes Apple quarantine, and bypasses Gatekeeper restrictions automatically:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ArmanKT/ConstStack-releases/main/install.sh | bash
@@ -45,14 +45,15 @@ If you use Homebrew, you can install ConstStack directly via our public tap:
 
 ```bash
 brew tap armankt/conststack-releases https://github.com/ArmanKT/ConstStack-releases
+brew trust armankt/conststack-releases
 brew install --cask conststack
 ```
 
 ---
 
-### 📥 Method 3: Direct DMG Download
+### 📥 Method 3: Manual DMG Download
 
-1. Download **[`ConstStack-macOS-v1.0.0.dmg`](https://github.com/ArmanKT/ConstStack-releases/raw/main/ConstStack-macOS-v1.0.0.dmg)** (21.5 MB).
+1. Download the latest **[`ConstStack macOS DMG Installer`](https://github.com/ArmanKT/ConstStack-releases/releases/latest)** from GitHub Releases.
 2. Open the `.dmg` file and drag **ConstStack** into your **Applications** folder.
 3. If macOS shows *"Apple cannot check it for malicious software"* (Gatekeeper block), run this 1-line command in your terminal to unlock it:
 
