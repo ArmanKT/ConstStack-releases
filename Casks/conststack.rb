@@ -1,6 +1,6 @@
 cask "conststack" do
-  version "1.1.0"
-  sha256 "444f03382fb1f99146dfbc04dfd071d4ccda577d4bc8ae9c5cca43a3435e5b72"
+  version "1.1.1"
+  sha256 "1d69a128abad8dfdc9399a541e1e51ccadfa358992ca2591740637bd4081dcf4"
 
   url "https://github.com/ArmanKT/ConstStack-releases/releases/download/v#{version}/ConstStack-macOS-v#{version}.dmg"
   name "ConstStack"
