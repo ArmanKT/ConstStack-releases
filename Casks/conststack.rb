@@ -7,6 +7,13 @@ cask "conststack" do
   desc "Ultra-Fast, Zero-Config Local Web Development Environment for macOS"
   homepage "https://constmind.com"
 
+  livecheck do
+    url "https://api.github.com/repos/ArmanKT/ConstStack-releases/releases/latest"
+    strategy :json do |json|
+      json["tag_name"]&.sub(/^v/i, "")
+    end
+  end
+
   auto_updates true
   depends_on macos: ">= :monterey"
 
