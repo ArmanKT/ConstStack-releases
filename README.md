@@ -23,7 +23,7 @@
 
 ## 📖 Overview
 
-**ConstStack** is a next-generation desktop development environment built for modern web developers. It provides a lightning-fast native stack combining **Apache 2.4, PHP-FPM Multi-Version Engine (PHP 7.4 - 8.5), Node.js Runtime Manager, MySQL 8.x, and phpMyAdmin** with zero configuration required.
+**ConstStack** is a next-generation desktop development environment built for modern web developers. It provides a lightning-fast native stack combining **Apache 2.4, PHP-FPM Multi-Version Engine (PHP 7.4 - 8.5), Node.js & NPM Runtime Manager, MySQL 8.x, and phpMyAdmin** with zero configuration required.
 
 Say goodbye to slow, bloated legacy tools like XAMPP or complex virtual machines. ConstStack runs natively with near-zero memory footprint, dedicated port isolation, automated system self-healing doctor, and zero ghost processes.
 
@@ -32,7 +32,7 @@ Say goodbye to slow, bloated legacy tools like XAMPP or complex virtual machines
 ## 🚀 Quick Installation
 
 ### ⚡ Method 1: 1-Line Terminal Auto-Install (Recommended)
-Automatically downloads the latest release, installs into `/Applications`, removes Apple quarantine, and bypasses Gatekeeper restrictions with zero friction:
+Automatically downloads the signed DMG, installs directly into `/Applications`, removes Apple quarantine, and bypasses Gatekeeper restrictions automatically:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ArmanKT/ConstStack-releases/main/install.sh | bash
@@ -41,19 +41,19 @@ curl -fsSL https://raw.githubusercontent.com/ArmanKT/ConstStack-releases/main/in
 ---
 
 ### 🍺 Method 2: Homebrew Cask
-If you use Homebrew, you can install ConstStack directly via our tap:
+If you use Homebrew, you can install ConstStack directly via our public tap:
 
 ```bash
-brew tap armankt/conststack https://github.com/ArmanKT/ConstStack
+brew tap armankt/conststack-releases https://github.com/ArmanKT/ConstStack-releases
 brew install --cask conststack
 ```
 
 ---
 
-### 📥 Method 3: Manual DMG Download
+### 📥 Method 3: Direct DMG Download
 
-1. Download **[`ConstStack-macOS-v1.0.0.dmg`](https://github.com/ArmanKT/ConstStack-releases/releases/latest)** directly from this repository.
-2. Open the `.dmg` and drag **ConstStack** into your **Applications** folder.
+1. Download **[`ConstStack-macOS-v1.0.0.dmg`](https://github.com/ArmanKT/ConstStack-releases/raw/main/ConstStack-macOS-v1.0.0.dmg)** (21.5 MB).
+2. Open the `.dmg` file and drag **ConstStack** into your **Applications** folder.
 3. If macOS shows *"Apple cannot check it for malicious software"* (Gatekeeper block), run this 1-line command in your terminal to unlock it:
 
 ```bash
