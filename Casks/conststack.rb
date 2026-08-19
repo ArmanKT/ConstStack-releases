@@ -19,12 +19,6 @@ cask "conststack" do
 
   app "ConstStack.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/ConstStack.app"],
-                   sudo: false
-  end
-
   zap trash: [
     "~/.const_stack",
     "~/Library/Application Support/ConstStack",
